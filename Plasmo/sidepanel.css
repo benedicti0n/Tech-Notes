@@ -1,0 +1,213 @@
+/* Side Panel Styles */
+.sidepanel-container {
+  width: 100%;
+  height: 100vh;
+  background: #f8f9fa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-y: auto;
+}
+
+.sidepanel-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.sidepanel-header h1 {
+  margin: 0 0 5px 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.sidepanel-header p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+.sidepanel-main {
+  padding: 20px;
+}
+
+.sidepanel-main section {
+  margin-bottom: 30px;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidepanel-main h2 {
+  margin: 0 0 15px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #202124;
+  border-bottom: 2px solid #e8eaed;
+  padding-bottom: 8px;
+}
+
+.current-page .page-info {
+  margin-bottom: 15px;
+}
+
+.page-title {
+  font-weight: 500;
+  color: #1a73e8;
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.page-url {
+  font-size: 0.8rem;
+  color: #5f6368;
+  word-break: break-all;
+  line-height: 1.2;
+}
+
+.page-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.analyze-btn,
+.bookmark-btn,
+.highlight-btn,
+.save-notes-btn,
+.tool-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.analyze-btn {
+  background: #1a73e8;
+  color: white;
+}
+
+.analyze-btn:hover:not(:disabled) {
+  background: #1557b0;
+}
+
+.analyze-btn:disabled {
+  background: #dadce0;
+  cursor: not-allowed;
+}
+
+.bookmark-btn {
+  background: #34a853;
+  color: white;
+}
+
+.bookmark-btn:hover {
+  background: #2d8f47;
+}
+
+.highlight-btn {
+  background: #fbbc04;
+  color: #202124;
+}
+
+.highlight-btn:hover {
+  background: #f9ab00;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 15px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 15px 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e8eaed;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1a73e8;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #5f6368;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.notes-textarea {
+  width: 100%;
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.notes-textarea:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.save-notes-btn {
+  background: #34a853;
+  color: white;
+  width: 100%;
+}
+
+.save-notes-btn:hover {
+  background: #2d8f47;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.tool-btn {
+  background: #f1f3f4;
+  color: #3c4043;
+  border: 1px solid #dadce0;
+  font-size: 0.8rem;
+  padding: 12px 8px;
+}
+
+.tool-btn:hover {
+  background: #e8eaed;
+}
+
+/* Scrollbar styling */
+.sidepanel-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidepanel-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.sidepanel-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.sidepanel-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
