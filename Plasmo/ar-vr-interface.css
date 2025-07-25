@@ -1,0 +1,457 @@
+/* AR/VR Interface Styles */
+
+.ar-view,
+.vr-view {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.ar-controls,
+.vr-controls {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  display: flex;
+  gap: 10px;
+}
+
+.ar-start-btn,
+.vr-start-btn,
+.ar-stop-btn,
+.vr-stop-btn,
+.ar-add-marker-btn,
+.vr-add-object-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ar-start-btn,
+.vr-start-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.ar-start-btn:hover,
+.vr-start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.ar-stop-btn,
+.vr-stop-btn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.ar-stop-btn:hover,
+.vr-stop-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+}
+
+.ar-add-marker-btn,
+.vr-add-object-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.ar-add-marker-btn:hover,
+.vr-add-object-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.ar-canvas,
+.vr-canvas {
+  width: 100%;
+  height: auto;
+  max-height: 720px;
+  display: block;
+  border-radius: 12px;
+}
+
+.ar-placeholder,
+.vr-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.ar-placeholder-content,
+.vr-placeholder-content {
+  max-width: 500px;
+}
+
+.ar-placeholder h3,
+.vr-placeholder h3 {
+  font-size: 2rem;
+  margin: 0 0 20px 0;
+  font-weight: 300;
+}
+
+.ar-placeholder p,
+.vr-placeholder p {
+  font-size: 1.1rem;
+  margin: 0 0 30px 0;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.ar-requirements,
+.vr-requirements {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: left;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ar-requirements p,
+.vr-requirements p {
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.ar-requirements ul,
+.vr-requirements ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+.ar-requirements li,
+.vr-requirements li {
+  margin: 8px 0;
+  position: relative;
+  padding-left: 20px;
+}
+
+.ar-requirements li::before,
+.vr-requirements li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4ecdc4;
+  font-weight: bold;
+}
+
+.ar-info,
+.vr-info {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 100;
+}
+
+.ar-info div,
+.vr-info div {
+  margin: 4px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/* Hand Tracking Visualizer */
+.hand-tracking-visualizer {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  color: white;
+}
+
+.hand-tracking-visualizer h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.2rem;
+  color: #4ecdc4;
+}
+
+.hand-tracking-canvas {
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  background: #000;
+  border-radius: 8px;
+  border: 2px solid #333;
+  display: block;
+  margin: 0 auto 15px auto;
+}
+
+.hand-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  font-size: 14px;
+  font-family: "SF Mono", Monaco, monospace;
+}
+
+.hand-info div {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ar-view,
+  .vr-view {
+    margin: 10px;
+    border-radius: 8px;
+  }
+
+  .ar-controls,
+  .vr-controls {
+    top: 10px;
+    left: 10px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ar-start-btn,
+  .vr-start-btn,
+  .ar-stop-btn,
+  .vr-stop-btn,
+  .ar-add-marker-btn,
+  .vr-add-object-btn {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+
+  .ar-placeholder,
+  .vr-placeholder {
+    min-height: 300px;
+    padding: 20px 15px;
+  }
+
+  .ar-placeholder h3,
+  .vr-placeholder h3 {
+    font-size: 1.5rem;
+  }
+
+  .ar-info,
+  .vr-info {
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    font-size: 11px;
+  }
+
+  .hand-tracking-visualizer {
+    padding: 15px;
+    margin: 15px 0;
+  }
+
+  .hand-info {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    font-size: 12px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .ar-view,
+  .vr-view {
+    border: 1px solid #333;
+  }
+
+  .hand-tracking-visualizer {
+    background: #0d1117;
+    border: 1px solid #21262d;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .ar-start-btn,
+  .vr-start-btn,
+  .ar-stop-btn,
+  .vr-stop-btn,
+  .ar-add-marker-btn,
+  .vr-add-object-btn {
+    border: 2px solid;
+  }
+
+  .ar-info,
+  .vr-info {
+    border: 2px solid white;
+  }
+
+  .hand-tracking-canvas {
+    border: 3px solid white;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .ar-start-btn,
+  .vr-start-btn,
+  .ar-stop-btn,
+  .vr-stop-btn,
+  .ar-add-marker-btn,
+  .vr-add-object-btn {
+    transition: none;
+  }
+
+  .ar-start-btn:hover,
+  .vr-start-btn:hover,
+  .ar-stop-btn:hover,
+  .vr-stop-btn:hover,
+  .ar-add-marker-btn:hover,
+  .vr-add-object-btn:hover {
+    transform: none;
+  }
+}
+
+/* Loading states */
+.ar-loading,
+.vr-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 18px;
+  z-index: 200;
+}
+
+.ar-loading::before,
+.vr-loading::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error states */
+.ar-error,
+.vr-error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 107, 107, 0.9);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  z-index: 200;
+  backdrop-filter: blur(10px);
+}
+
+.ar-error::before,
+.vr-error::before {
+  content: "⚠️";
+  display: block;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Success states */
+.ar-success,
+.vr-success {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(76, 175, 80, 0.9);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+  z-index: 200;
+  backdrop-filter: blur(10px);
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Accessibility improvements */
+.ar-view:focus-within,
+.vr-view:focus-within {
+  outline: 2px solid #4ecdc4;
+  outline-offset: 2px;
+}
+
+.hand-tracking-visualizer:focus-within {
+  outline: 2px solid #4ecdc4;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .ar-view,
+  .vr-view,
+  .hand-tracking-visualizer {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+
+  .ar-controls,
+  .vr-controls {
+    display: none;
+  }
+
+  .ar-canvas,
+  .vr-canvas,
+  .hand-tracking-canvas {
+    max-height: none;
+  }
+}
